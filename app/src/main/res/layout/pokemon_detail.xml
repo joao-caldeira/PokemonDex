@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="15dp" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pokemonDetailHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/detailBackButton"
+            android:layout_width="46dp"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_arrow_left" />
+
+        <ImageView
+            android:id="@+id/searchHeaderImage"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/ic_pokeball"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        app:layout_constraintTop_toBottomOf="@id/pokemonDetailHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pokemonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_700">
+
+            <ImageView
+                android:id="@+id/pokemonImage"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/pokemonImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/pokemonName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textAppearance="?attr/textAppearanceListItem"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pokemonImage"
+                tools:text="CHARIZARD"
+                android:background="@color/white"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/statsCard"
+        app:layout_constraintTop_toBottomOf="@id/card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pokemonStatsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/pokemonHpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pokemonStatsHp"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:text="@string/stats_hp" />
+
+                <TextView
+                    android:id="@+id/pokemonStatsHpStat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textSize="12sp"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    tools:text="CHARIZARD"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pokemonAttackLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/pokemonHpLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pokemonStatsAttack"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:text="@string/stats_attack" />
+
+                <TextView
+                    android:id="@+id/pokemonStatsAttackStat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textSize="12sp"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    tools:text="CHARIZARD"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pokemonDefenseLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/pokemonAttackLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pokemonStatsDefense"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:text="@string/stats_defense"/>
+
+                <TextView
+                    android:id="@+id/pokemonStatsDefenseStat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textSize="12sp"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    tools:text="CHARIZARD"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pokemonSpecialAttackLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/pokemonDefenseLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pokemonStatsSpecialAttack"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:text="@string/stats_special_attack"/>
+
+                <TextView
+                    android:id="@+id/pokemonStatsSpecialAttackStat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textSize="12sp"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    tools:text="CHARIZARD"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pokemonSpecialDefenseLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/pokemonSpecialAttackLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pokemonStatsSpecialDefense"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:text="@string/stats_special_defense"/>
+
+                <TextView
+                    android:id="@+id/pokemonStatsSpecialDefenseStat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textSize="12sp"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    tools:text="CHARIZARD"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pokemonSpeedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/pokemonSpecialDefenseLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pokemonStatsSpeed"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:text="@string/stats_speed"/>
+
+                <TextView
+                    android:id="@+id/pokemonStatsSpeedStat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:textSize="12sp"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    tools:text="CHARIZARD"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

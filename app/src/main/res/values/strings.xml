@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PokemonDex</string>
+    <string name="app_tab_home">Home</string>
+    <string name="app_tab_search">Search</string>
+    <string name="search_placeholder">Search pokemon…</string>
+
+
+    <string name="stats_hp">HP</string>
+    <string name="stats_attack">ATTACK</string>
+    <string name="stats_defense">DEFENSE</string>
+    <string name="stats_special_attack">SPECIAL ATTACK</string>
+    <string name="stats_special_defense">SPECIAL DEFENSE</string>
+    <string name="stats_speed">SPEED</string>
+</resources>
